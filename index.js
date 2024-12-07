@@ -13,6 +13,14 @@ const app = express()
 Connection()
 app.use(express.json())
 app.use(cors())
+const Options = {
+    origin: 'https://e-commerce-zeta-peach.vercel.app',  
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization']
+};
+
+app.use(cors(Options));
+
 
 
 app.use("/api/buyers/" , buyerRouter)
